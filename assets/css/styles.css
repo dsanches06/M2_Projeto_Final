@@ -1,6 +1,6 @@
 :root {
-  --width: 500px;
-  --height: 500px;
+  --width: 150px;
+  --height: 150px;
   --quantity: 10;
   --duration: 60s;
 }
@@ -76,5 +76,10 @@ nav ul.aberto {
     position: static; /* Volta ao fluxo normal */
     width: auto;
     padding: 0;
+  }
+
+  :root {
+    --width: 500px;
+    --height: 500px;
   }
 }
