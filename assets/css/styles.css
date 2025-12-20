@@ -3,14 +3,24 @@
   --height: 150px;
   --quantity: 10;
   --duration: 60s;
+
+  --primary-bg-color: #c93b3b;
+  --secondary-bg-color: #1560ac;
+  --primary-border-color: #24c739;
+  --secondary-border-color: #5555b8;
+
+  --title-color: #e3e3e9;
+  --text-color: hsl(231, 20%, 82%);
+  --link-color: #dfe0e9;
+  --icon-color: #141518;
 }
 
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   vertical-align: baseline;
+  list-style: none;
 }
 
 html {
@@ -18,17 +28,83 @@ html {
 }
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   line-height: 1.6;
-  background-color: #f5f5f5;
-}
-
-ul {
-  list-style: none;
+  color: #333;
+  background-color: #b33333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+i {
+  color: var(--icon-color);
+}
+
+b {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.4rem;
+}
+
+h3 {
+  font-size: 1.55rem;
+  text-align: left;
+}
+
+h4 {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.15rem;
+  text-align: left;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "League Spartan", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  color: var(--title-color);
+  font-weight: 200;
+}
+
+p,
+span,
+li {
+  font-size: 1rem;
+}
+
+p {
+  text-align: justify;
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  z-index: 2;
 }
 
 /* Estilo Base (Mobile) */
@@ -48,7 +124,7 @@ nav ul {
   width: 100%;
   background-color: #333; /* Ajusta à tua cor */
   position: absolute; /* Para sobrepor conteúdo */
-  top: 40px; /* Ajusta conforme altura do teu header */
+  /*top: 40px;  Ajusta conforme altura do teu header */
   left: 0;
   padding: 20px;
   z-index: 100;
@@ -59,27 +135,171 @@ nav ul.aberto {
   display: flex;
 }
 
+.nav-text {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  background: transparent;
+  border-radius: 3.125rem;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
+
+.btn span,
+.btn i {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.btn--primary span {
+  color: var(--primary-color);
+}
+
+.btn--primary {
+  border: 1px solid var(--primary-color);
+}
+
+.carousel {
+  padding: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+footer {
+  margin-bottom: 5rem;
+}
+
+footer p {
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Back to Top Button **/
+.top-arrow {
+  display: none;
+}
+
 /** GALERIA **/
 
 /** RESPONSIVIDADE **/
 
 /* Quando o ecrã for grande (Tablet/PC), queremos o comportamento normal. */
 @media (min-width: 768px) {
+  :root {
+    --width: 300px;
+    --height: 300px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    z-index: 2;
+    background-color: #333;
+  }
+
+  .header h1,
+  span {
+    font-size: 2em;
+    color: #fff;
+  }
+
   .menu-toggle {
     display: none; /* Esconde o botão */
   }
 
+  /** Nav **/
+  nav {
+    background-color: #12c9c9;
+  }
   nav ul {
     display: flex; /* Mostra sempre o menu */
     flex-direction: row; /* Em linha */
+    justify-content: center;
     background-color: transparent;
     position: static; /* Volta ao fluxo normal */
     width: auto;
     padding: 0;
   }
 
-  :root {
-    --width: 500px;
-    --height: 500px;
+  nav ul li a {
+    color: #333;
+    display: block;
+    padding: 10px;
+    font-size: 20px;
   }
+
+  nav ul li a:hover {
+    background-color: #46eeeeb3;
+    border-radius: 3px;
+  }
+
+  /** Carousel **/
+  .carousel {
+    padding: 8rem 6rem 4rem 6rem;
+  }
+
+  /* Back to Top Button 
+
+  .top-arrow {
+    display: flex;
+    right: 30px;
+    bottom: 70px;
+    background-color: #12c9c9;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50px;
+  }
+
+  .back-to-top {
+    animation-name: appear;
+    animation-timeline: scroll(y);
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      display: none;
+      position: fixed;
+    }
+
+    3% {
+      opacity: 0;
+      display: none;
+    }
+
+    3.5% {
+      opacity: 1;
+      display: block;
+    }
+
+    100% {
+      opacity: 1;
+      display: block;
+      position: fixed;
+    }
+  }**/
 }
