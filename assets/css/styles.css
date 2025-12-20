@@ -1,0 +1,80 @@
+:root {
+  --width: 500px;
+  --height: 500px;
+  --quantity: 10;
+  --duration: 60s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Estilo Base (Mobile) */
+.menu-toggle {
+  display: block; /* Botão visível */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: inherit; /* Herda a cor do header */
+  padding-top: 5px;
+}
+
+nav ul {
+  display: none; /* Menu escondido por defeito */
+  flex-direction: column;
+  width: 100%;
+  background-color: #333; /* Ajusta à tua cor */
+  position: absolute; /* Para sobrepor conteúdo */
+  top: 40px; /* Ajusta conforme altura do teu header */
+  left: 0;
+  padding: 20px;
+  z-index: 100;
+}
+
+/* Esta classe será adicionada pelo JS para mostrar o menu */
+nav ul.aberto {
+  display: flex;
+}
+
+/** GALERIA **/
+
+/** RESPONSIVIDADE **/
+
+/* Quando o ecrã for grande (Tablet/PC), queremos o comportamento normal. */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none; /* Esconde o botão */
+  }
+
+  nav ul {
+    display: flex; /* Mostra sempre o menu */
+    flex-direction: row; /* Em linha */
+    background-color: transparent;
+    position: static; /* Volta ao fluxo normal */
+    width: auto;
+    padding: 0;
+  }
+}
