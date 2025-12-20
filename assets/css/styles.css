@@ -303,27 +303,34 @@ footer p {
     }
   }**/
 }
-/* ==== Galeria Mosaico ==== */
+/* Galeria responsiva em 3 colunas e sem margem nas laterais */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 4px;          /* Espaço pequeno entre imagens */
-  margin: 20px;      /* Espaço externo da galeria */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;        /* sem espaçamento entre imagens */
+  padding: 0;    /* sem padding nas bordas */
+  margin: 0;     /* sem margem na secção */
+  width: 100vw;  /* ocupa 100% da largura da viewport */
 }
 
 .gallery img {
   width: 100%;
-  height: 120px;      /* Altura uniforme */
-  object-fit: cover;  /* Corta a imagem se necessário */
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
+  height: auto;
+  object-fit: cover; /* garante que a imagem preenche o grid */
+  display: block;
+}
+/* Responsivo */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
-
 /* ==== Botão de reservas ==== */
 .reservation-container {
   text-align: center;
@@ -569,4 +576,43 @@ nav.scrolled {
 /* Ajuste de conteúdo */
 body {
   margin-top: 70px; /* espaço para a navbar fixa */
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-footer .footer-text p {
+  margin: 0;
+}
+
+/* Centralizar ícones */
+.site-footer .footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.site-footer .footer-social a {
+  color: #fff;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.site-footer .footer-social a:hover {
+  color: #f04; /* ou outra cor de destaque que queiras */
 }
