@@ -1,3 +1,6 @@
+/* =========================
+   Variáveis Globais
+   ========================= */
 :root {
   --width: 150px;
   --height: 150px;
@@ -15,6 +18,9 @@
   --icon-color: #141518;
 }
 
+/* =========================
+   Reset / Base
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +42,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  margin-top: 70px; /* espaço para navbar fixa */
 }
 
 a {
@@ -55,48 +62,24 @@ b {
   font-weight: 400;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 200;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
-  letter-spacing: 0.4rem;
-}
-
-h3 {
-  font-size: 1.55rem;
-  text-align: left;
-}
-
-h4 {
-  color: var(--primary-color);
-  font-weight: 400;
-  font-size: 1.15rem;
-  text-align: left;
-}
-
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: "League Spartan", Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   color: var(--title-color);
   font-weight: 200;
 }
 
-p,
-span,
-li {
-  font-size: 1rem;
-}
+h1 { font-size: 2.5rem; font-weight: 200; }
+h2 { font-size: 2rem; text-align: center; letter-spacing: 0.4rem; }
+h3 { font-size: 1.55rem; text-align: left; }
+h4 { color: var(--primary-color); font-weight: 400; font-size: 1.15rem; text-align: left; }
 
-p {
-  text-align: justify;
-}
+p, span, li { font-size: 1rem; }
+p { text-align: justify; }
 
+/* =========================
+   Header / Navbar
+   ========================= */
 .header {
   display: flex;
   flex-flow: row wrap;
@@ -107,39 +90,81 @@ p {
   z-index: 2;
 }
 
-/* Estilo Base (Mobile) */
+/* Botão menu mobile */
 .menu-toggle {
-  display: block; /* Botão visível */
+  display: none; /* aparece apenas no mobile */
   background: none;
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color: inherit; /* Herda a cor do header */
+  color: inherit;
   padding-top: 5px;
 }
 
-nav ul {
-  display: none; /* Menu escondido por defeito */
-  flex-direction: column;
-  width: 100%;
-  background-color: #333; /* Ajusta à tua cor */
-  position: absolute; /* Para sobrepor conteúdo */
-  /*top: 40px;  Ajusta conforme altura do teu header */
-  left: 0;
-  padding: 20px;
-  z-index: 100;
-}
-
-/* Esta classe será adicionada pelo JS para mostrar o menu */
-nav ul.aberto {
+/* Navbar base */
+nav {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background 0.3s ease;
 }
 
-.nav-text {
-  font-size: 1.15rem;
-  text-transform: uppercase;
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.8);
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+  justify-content: center;
+  background-color: transparent;
+  position: static;
+  width: auto;
+}
+
+/* Submenus */
+.has-submenu:hover .submenu { display: block; }
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  z-index: 10;
+  list-style: none;
+}
+
+.submenu li a { padding: 0.5rem 1rem; }
+
+nav li { position: relative; }
+
+nav li.logo-item {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+nav li.logo-item img { display: block; height: 40px; }
+
+/* =========================
+   Botões
+   ========================= */
 .btn {
   display: flex;
   justify-content: center;
@@ -155,229 +180,80 @@ nav ul.aberto {
   color: var(--primary-color);
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  transition: ease-in-out 0.3s;
+.btn:hover { transform: scale(1.05); transition: ease-in-out 0.3s; }
+
+.btn span, .btn i { font-size: 1.25rem; text-transform: uppercase; }
+
+.btn--primary span { color: var(--primary-color); }
+.btn--primary { border: 1px solid var(--primary-color); }
+
+.reservation-btn {
+  background-color: rgb(12, 10, 10);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
-.btn span,
-.btn i {
-  font-size: 1.25rem;
-  text-transform: uppercase;
-}
+.reservation-btn:hover { background-color: #d03; }
 
-.btn--primary span {
-  color: var(--primary-color);
-}
+/* =========================
+   Carousel
+   ========================= */
+.carousel { padding: 1rem; }
 
-.btn--primary {
-  border: 1px solid var(--primary-color);
-}
-
-.carousel {
-  padding: 1rem;
-}
-
+/* =========================
+   Main / Overlay
+   ========================= */
 main {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
-
-  /* Overlay */
-  &:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgb(255, 255, 255); /* controla a opacidade */
-    z-index: 0;
-  }
 }
 
-main > * {
-  position: relative;
-  z-index: 1; /* garante que o conteúdo fica sobre o overlay */
-}
+main > * { position: relative; z-index: 1; }
 
-/* Back to Top Button **/
-.top-arrow {
-  display: none;
-}
-
-/** GALERIA **/
-
-/** RESPONSIVIDADE **/
-
-/* Quando o ecrã for grande (Tablet/PC), queremos o comportamento normal. */
-@media (min-width: 768px) {
-  :root {
-    --width: 300px;
-    --height: 300px;
-  }
-
-  /* Header */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    z-index: 2;
-    background-color: #333;
-  }
-
-  .header h1,
-  span {
-    font-size: 2em;
-    color: #fff;
-  }
-
-  .menu-toggle {
-    display: none; /* Esconde o botão */
-  }
-
-  /** Nav **/
-  nav {
-    background-color: #12c9c9;
-  }
-  nav ul {
-    display: flex; /* Mostra sempre o menu */
-    flex-direction: row; /* Em linha */
-    justify-content: center;
-    background-color: transparent;
-    position: static; /* Volta ao fluxo normal */
-    width: auto;
-    padding: 0;
-  }
-
-  nav ul li a {
-    color: #333;
-    display: block;
-    padding: 10px;
-    font-size: 20px;
-  }
-
-  nav ul li a:hover {
-    background-color: #e5533d;
-    color: #fff;
-    border-radius: 3px;
-  }
-
-  /** Carousel **/
-  .carousel {
-    padding: 8rem 6rem 4rem 6rem;
-    
-  }
-
-  /* Back to Top Button 
-
-  .top-arrow {
-    display: flex;
-    right: 30px;
-    bottom: 70px;
-    background-color: #12c9c9;
-    border-radius: 20px;
-    padding: 10px;
-    width: 50px;
-  }
-
-  .back-to-top {
-    animation-name: appear;
-    animation-timeline: scroll(y);
-  }
-
-  @keyframes appear {
-    0% {
-      opacity: 0;
-      display: none;
-      position: fixed;
-    }
-
-    3% {
-      opacity: 0;
-      display: none;
-    }
-
-    3.5% {
-      opacity: 1;
-      display: block;
-    }
-
-    100% {
-      opacity: 1;
-      display: block;
-      position: fixed;
-    }
-  }**/
-}
-/* Galeria responsiva em 3 colunas e sem margem nas laterais */
+/* =========================
+   Galeria
+   ========================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;        /* sem espaçamento entre imagens */
-  padding: 0;    /* sem padding nas bordas */
-  margin-top: 0;     /* sem margem na secção */
-  width: 100vw;  /* ocupa 100% da largura da viewport */
-  background-color: #f8f8f8; /* mesma cor da história */
+  gap: 0;
+  padding: 0;
+  margin-top: 0;
+  width: 100vw;
+  background-color: #f8f8f8;
 }
-
 
 .gallery img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* garante que a imagem preenche o grid */
+  object-fit: cover;
   display: block;
 }
-/* Responsivo */
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 400px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-}
-/* ==== Botão de reservas ==== */
-.reservation-container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.reservation-btn {
-  background-color: #ff6347;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.reservation-btn:hover {
-  background-color: #e5533d;
-}
-
-/* ==== Modal ==== */
+/* =========================
+   Modal
+   ========================= */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000; 
+  display: none;
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
   background-color: #fff;
-  margin: 10% auto; 
+  margin: 10% auto;
   padding: 20px;
   border-radius: 8px;
   width: 90%;
@@ -385,23 +261,9 @@ main > * {
   position: relative;
 }
 
-.modal-content h2 {
-  margin-bottom: 15px;
-}
-
-.modal-content label {
-  display: block;
-  margin-top: 10px;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
+.modal-content h2 { margin-bottom: 15px; }
+.modal-content label { display: block; margin-top: 10px; }
+.modal-content input { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
 .modal-content button {
   margin-top: 15px;
   width: 100%;
@@ -413,182 +275,13 @@ main > * {
   cursor: pointer;
 }
 
-.modal-content button:hover {
-  background-color: #e5533d;
-}
+.modal-content button:hover { background-color: #e5533d; }
 
-/* Botão de fechar */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 25px;
-  font-weight: bold;
-  cursor: pointer;
-}
+.close { position: absolute; top: 10px; right: 15px; font-size: 25px; font-weight: bold; cursor: pointer; }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-}
-
-nav li {
-  position: relative;
-}
-
-nav a {
-  text-decoration: none;
-  color: #000;
-  padding: 0.5rem 1rem;
-  display: block;
-}
-
-.has-submenu:hover .submenu {
-  display: block;
-}
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  list-style: none;
-  min-width: 150px;
-  z-index: 10;
-}
-
-.submenu li a {
-  padding: 0.5rem 1rem;
-}
-
-.menu-toggle {
-  display: none; /* aparecerá em mobile */
-}
-
-/*logotipo na nav bar */
-nav li.logo-item {
-  display: flex;
-  align-items: center;
-  padding: 0 0.5rem;
-}
-
-nav li.logo-item img {
-  display: block;
-  height: 40px; /* ajusta conforme quiser */
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* centraliza todos os itens horizontalmente */
-  gap: 2rem; /* espaço entre menu e botão */
-  padding: 0.5rem 1rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-left {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-}
-
-nav li.logo-item img {
-  display: block;
-  height: 40px;
-}
-
-.reservation-btn {
-  background-color: rgb(12, 10, 10);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.reservation-btn:hover {
-  background-color: #d03;
-}
-
-/* Submenu */
-.has-submenu:hover .submenu {
-  display: block;
-}
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  list-style: none;
-  min-width: 150px;
-  z-index: 10;
-}
-
-.submenu li a {
-  padding: 0.5rem 1rem;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  .nav-left, .nav-right {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
-  .nav-right {
-    margin-top: 0.5rem;
-  }
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* NAVBAR BASE */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.5); /* 50% transparência */
-  backdrop-filter: blur(10px); /* borrão atrás (opcional mas fica elegante) */
-  z-index: 1000;
-  transition: background 0.3s ease;
-}
-
-/* Quando scrolled adiciona cor mais forte */
-nav.scrolled {
-  background: rgba(255, 255, 255, 0.8);
-}
-
-/* Ajuste de conteúdo */
-body {
-  margin-top: 70px; /* espaço para a navbar fixa */
-}
-
-/* ===== Footer ===== */
+/* =========================
+   Footer
+   ========================= */
 .site-footer {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background: #ffffff;
@@ -598,22 +291,9 @@ body {
   font-size: 0.9rem;
 }
 
-.site-footer .footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
+.site-footer .footer-content { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.site-footer .footer-text p { display: flex; justify-content: center; align-items: center; margin: 0; }
 
-.site-footer .footer-text p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-
-}
-
-/* Centralizar ícones */
 .site-footer .footer-social {
   display: flex;
   justify-content: center;
@@ -628,19 +308,19 @@ body {
   transition: color 0.3s ease;
 }
 
-.site-footer .footer-social a:hover {
-  color: #f04; /* ou outra cor de destaque que queiras */
-}
+.site-footer .footer-social a:hover { color: #f04; }
 
-/* ===== Reviews Section ===== */
+/* =========================
+   Reviews Section
+   ========================= */
 .reviews-section {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #fff; /* fundo branco */
+  background-color: #fff;
   padding: 3rem 2rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   color: #333;
+  overflow: hidden;
   font-family: Georgia, serif;
 }
 
@@ -652,89 +332,50 @@ body {
   color: #444;
 }
 
-/* Colunas em telas grandes */
-@media (min-width: 768px) {
-  .reviews-section {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-  }
-}
+.reviews-section .review { font-size: 1rem; line-height: 1.8; text-align: justify; }
+.reviews-section .review p { margin-bottom: 1rem; }
 
-.reviews-section .review {
-  font-size: 1rem;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-.reviews-section .review p {
-  margin-bottom: 1rem;
-}
-/* o browser faz rolagem suave até à secção em vez de saltar de imediato*/
-html {
-  scroll-behavior: smooth;
-}
-.reviews-section {
-  width: 100%;
-  overflow: hidden; /* impede sobreposição */
-}
-
-/* IMAGENS */
-.reviews-images {
-  display: flex;
-  width: 100%;
-}
-
+.reviews-images { display: flex; width: 100%; }
 .reviews-images img {
   width: 50%;
-  height: 420px; /* controla aqui */
+  height: 420px;
   object-fit: cover;
   display: block;
   filter: grayscale(100%);
 }
 
-/* CONTEÚDO */
-.reviews-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
+.reviews-content { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
 
-@media (max-width: 768px) {
-  .reviews-images {
-    flex-direction: column;
-  }
-
-  .reviews-images img {
-    width: 100%;
-    height: 260px;
-  }
-}
-/* ===== imagens chefs ===== */
+/* =========================
+   Chefs Section
+   ========================= */
 .chefs-section {
-    padding: 0;
-    margin: 0;
-    width: 100vw; /* ocupa toda a largura da tela */
-    background-color: #f8f8f8;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  background-color: #f8f8f8;
 }
 
 .chefs-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsivo */
-    gap: 0;      /* sem espaço entre imagens */
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .chef img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* cobre o espaço sem distorcer */
-    display: block;
-    transition: transform 0.3s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
 }
 
-/* Seção História */
+/* =========================
+   História Section
+   ========================= */
 .historia-section {
   padding: 60px 20px;
   background-color: #f8f8f8;
@@ -749,62 +390,63 @@ html {
   gap: 40px;
 }
 
-.historia-text {
-  flex: 1;
-}
+.historia-text { flex: 1; }
+.historia-text h2 { font-size: 36px; margin-bottom: 20px; color: #333; }
+.historia-text p { font-size: 18px; line-height: 1.6; color: #555; }
 
-.historia-text h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #333;
-}
+.historia-img { flex: 1; }
+.historia-img img { width: 100%; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
 
-.historia-text p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #555;
-}
+.historia-section { padding-bottom: 0; margin-bottom: 0; }
 
-.historia-img {
-  flex: 1;
-}
-
-.historia-img img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.historia-section {
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .historia-section .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .historia-text, .historia-img {
-    width: 100%;
-  }
-
-  .historia-img img {
-    max-width: 100%;
-    margin-top: 20px;
-  }
-}
-/* abre o menu carta por debaixo do nav bar */
+/* =========================
+   Carta Section
+   ========================= */
 .carta-section {
-  padding: 3rem 1rem 1rem 1rem; /* espaçamento do topo suficiente para não colar na nav */
-  background-color: #fff; /* opcional: deixa a carta destacada */
+  padding: 3rem 1rem 1rem 1rem;
+  background-color: #fff;
 }
 
-.hidden {
-  display: none; /* garante que fique fechado */
+.hidden { display: none; }
+
+/* =========================
+   Responsividade
+   ========================= */
+@media (max-width: 768px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery img { width: 100%; }
+
+  .reviews-images { flex-direction: column; }
+  .reviews-images img { width: 100%; height: 260px; }
+
+  .historia-section .container { flex-direction: column; text-align: center; }
+  .historia-text, .historia-img { width: 100%; }
+  .historia-img img { margin-top: 20px; }
+
+  nav { flex-direction: column; align-items: center; }
+  .nav-left, .nav-right { flex-direction: column; width: 100%; align-items: center; }
+  .nav-right { margin-top: 0.5rem; }
+  .menu-toggle { display: block; }
 }
 
+@media (max-width: 600px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 400px) { .gallery { grid-template-columns: 1fr; } }
+
+/* =========================
+   Responsividade Desktop
+   ========================= */
+@media (min-width: 768px) {
+  :root { --width: 300px; --height: 300px; }
+
+  .header { background-color: #333; }
+  .header h1, span { font-size: 2em; color: #fff; }
+  .menu-toggle { display: none; }
+
+  .carousel { padding: 8rem 6rem 4rem 6rem; }
+
+  .reviews-section { grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+  nav ul { display: flex; flex-direction: row; justify-content: center; background-color: transparent; position: static; width: auto; padding: 0; }
+  nav ul li a { color: #333; display: block; padding: 10px; font-size: 20px; }
+  nav ul li a:hover { background-color: #e5533d; color: #fff; border-radius: 3px; }
+}
