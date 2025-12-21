@@ -666,3 +666,67 @@ body {
 .reviews-section .review p {
   margin-bottom: 1rem;
 }
+/* o browser faz rolagem suave até à secção em vez de saltar de imediato*/
+html {
+  scroll-behavior: smooth;
+}
+.reviews-section {
+  width: 100%;
+  overflow: hidden; /* impede sobreposição */
+}
+
+/* IMAGENS */
+.reviews-images {
+  display: flex;
+  width: 100%;
+}
+
+.reviews-images img {
+  width: 50%;
+  height: 420px; /* controla aqui */
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+}
+
+/* CONTEÚDO */
+.reviews-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+  .reviews-images {
+    flex-direction: column;
+  }
+
+  .reviews-images img {
+    width: 100%;
+    height: 260px;
+  }
+}
+/* ===== imagens chefs ===== */
+.chefs-section {
+    padding: 0;
+    margin: 0;
+    width: 100vw; /* ocupa toda a largura da tela */
+    background-color: #f8f8f8;
+}
+
+.chefs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsivo */
+    gap: 0;      /* sem espaço entre imagens */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.chef img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cobre o espaço sem distorcer */
+    display: block;
+    transition: transform 0.3s;
+}
