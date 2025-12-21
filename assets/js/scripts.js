@@ -47,14 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* GALERIA: abrir imagem em nova aba (opcional) */
-const galleryImages = document.querySelectorAll('.gallery img');
-galleryImages.forEach(img => {
-  img.addEventListener('click', () => {
-    window.open(img.src, '_blank'); // abre imagem em nova aba
-  });
-});
-
 /* CAROUSEL */
 const items = document.querySelectorAll(".carousel .item");
 let current = 0;
@@ -91,8 +83,7 @@ menuLinks.forEach(link => {
   });
 });
 
-// =========================
-// MENU MOBILE TOGGLE
+// NAVBAR MOBILE TOGGLE
 // =========================
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-left');
