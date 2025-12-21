@@ -319,6 +319,7 @@ main > * { position: relative; z-index: 1; }
 .footer-text p {
   margin: 5px 0;
   font-size: 14px;
+  text-align: center;
 }
 
 .footer-social {
