@@ -16,8 +16,7 @@ function addClassList(element) {
 function toogleSlideMenu(element) {
     if (element.classList.contains('aberto')) {
         carousel.style.padding = "7rem 1rem";
-    }
-    else {
+    } else {
         carousel.style.padding = "1rem";
     }
 }
@@ -65,3 +64,29 @@ function nextSlide() {
   current = (current + 1) % items.length;
   items[current].style.display = "block";
 }
+
+/* CARTA: Toggle abre e fecha a carta */
+const menuLinks = document.querySelectorAll('.menu-link'); 
+const sections = document.querySelectorAll('.carta-section');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    if (!targetSection) return;
+
+    // Se já está visível, fecha
+    if (window.getComputedStyle(targetSection).display !== 'none') {
+      targetSection.style.display = 'none';
+    } else {
+      // Fecha todas as outras seções
+      sections.forEach(sec => sec.style.display = 'none');
+      // Abre a seção clicada
+      targetSection.style.display = 'block';
+      // Scroll suave até a seção
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
