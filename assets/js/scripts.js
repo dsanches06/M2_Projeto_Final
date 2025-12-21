@@ -91,3 +91,12 @@ menuLinks.forEach(link => {
   });
 });
 
+// =========================
+// MENU MOBILE TOGGLE
+// =========================
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-left');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});

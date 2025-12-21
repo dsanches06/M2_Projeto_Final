@@ -289,6 +289,16 @@ main > * { position: relative; z-index: 1; }
   font-family: Arial, sans-serif;
 }
 
+/* =========================
+   FOOTER GERAL
+========================= */
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
 /* Container principal */
 .footer-content {
   max-width: 1200px;
@@ -298,18 +308,22 @@ main > * { position: relative; z-index: 1; }
   gap: 30px;
 }
 
+
 /* =========================
    TEXTO + REDES SOCIAIS
 ========================= */
+.footer-text {
+  text-align: center;
+}
+
 .footer-text p {
   margin: 5px 0;
   font-size: 14px;
-  text-align: center;
-
 }
 
 .footer-social {
   display: flex;
+  justify-content: center;
   gap: 15px;
 }
 
@@ -322,26 +336,31 @@ main > * { position: relative; z-index: 1; }
 .footer-social a:hover {
   color: #c59d5f;
 }
-
 /* =========================
-   LOCALIZAÇÃO SEM SPACE-BETWEEN
+   LOCALIZAÇÃO
 ========================= */
 .footer-location {
   display: flex;
-  justify-content: center; /* REMOVE space-between */
+  justify-content: center;
   align-items: center;
-  gap: 20px; /* CONTROLA a distância entre texto e mapa */
+  gap: 20px;
 }
 
-/* Texto da morada */
+/* Morada */
 .footer-location .address {
-  flex: none; /* REMOVE flex: 1 */
   text-align: center;
+  max-width: 260px;
 }
 
-/* Mapa */
-.footer-location .map {
-  flex: none; /* REMOVE flex: 1 */
+.footer-location .address h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #c59d5f;
+}
+
+.footer-location .address p {
+  margin: 4px 0;
+  font-size: 14px;
 }
 
 /* Mapa quadrado */
@@ -352,12 +371,66 @@ main > * { position: relative; z-index: 1; }
 }
 
 /* =========================
-   MOBILE
+   MOBILE Responsivo
 ========================= */
 @media (max-width: 768px) {
   .footer-location {
     flex-direction: column;
+  }
+
+  .footer-location .map iframe {
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+  }
+}
+
+/* =========================
+   MENU MOBILE (TOGGLE)
+========================= */
+
+/* Estado normal (desktop) */
+.nav-left {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+/* Botão hamburger escondido no desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  /* Mostra o botão hamburger */
+  .menu-toggle {
+    display: block;
+    color: #000;
+  }
+
+  /* Menu fechado por defeito */
+  .nav-left {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* ajusta à altura do nav */
+    left: 0;
+    width: 100%;
+    padding: 20px;
     gap: 15px;
+  }
+
+  /* Menu aberto */
+  .nav-left.active {
+    display: flex;
   }
 }
 
