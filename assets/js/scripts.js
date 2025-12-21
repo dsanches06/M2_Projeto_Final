@@ -21,7 +21,7 @@ function toogleSlideMenu(element) {
     }
 }
 
-/* MODAL DE RESERVAS - corrigido */
+/* MODAL DE RESERVAS */
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("reservationModal");
     const menuBtn = document.getElementById("openReservation");
