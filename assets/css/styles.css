@@ -280,35 +280,86 @@ main > * { position: relative; z-index: 1; }
 .close { position: absolute; top: 10px; right: 15px; font-size: 25px; font-weight: bold; cursor: pointer; }
 
 /* =========================
-   Footer
-   ========================= */
+   FOOTER GERAL
+========================= */
 .site-footer {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background: #ffffff;
-  color: #0c0303;
-  padding: 1.5rem 0;
-  text-align: center;
-  font-size: 0.9rem;
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
 }
 
-.site-footer .footer-content { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-.site-footer .footer-text p { display: flex; justify-content: center; align-items: center; margin: 0; }
-
-.site-footer .footer-social {
+/* Container principal */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.site-footer .footer-social a {
-  color: #000000;
-  font-size: 1.6rem;
+/* =========================
+   TEXTO + REDES SOCIAIS
+========================= */
+.footer-text p {
+  margin: 5px 0;
+  font-size: 14px;
+  text-align: center;
+
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
-.site-footer .footer-social a:hover { color: #f04; }
+.footer-social a:hover {
+  color: #c59d5f;
+}
+
+/* =========================
+   LOCALIZAÇÃO SEM SPACE-BETWEEN
+========================= */
+.footer-location {
+  display: flex;
+  justify-content: center; /* REMOVE space-between */
+  align-items: center;
+  gap: 20px; /* CONTROLA a distância entre texto e mapa */
+}
+
+/* Texto da morada */
+.footer-location .address {
+  flex: none; /* REMOVE flex: 1 */
+  text-align: center;
+}
+
+/* Mapa */
+.footer-location .map {
+  flex: none; /* REMOVE flex: 1 */
+}
+
+/* Mapa quadrado */
+.footer-location .map iframe {
+  width: 220px;
+  height: 220px;
+  border-radius: 8px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .footer-location {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 
 /* =========================
    Reviews Section
