@@ -28,10 +28,10 @@ html {
 }
 
 body {
-   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   line-height: 1.6;
   color: #333;
-  background-color: #b33333;
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -179,19 +179,25 @@ nav ul.aberto {
 }
 
 main {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+
+  /* Overlay */
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(255, 255, 255); /* controla a opacidade */
+    z-index: 0;
+  }
 }
 
-footer {
-  margin-bottom: 5rem;
-}
-
-footer p {
-  font-size: 0.875rem;
-  text-align: center;
-  padding: 1rem;
+main > * {
+  position: relative;
+  z-index: 1; /* garante que o conteúdo fica sobre o overlay */
 }
 
 /* Back to Top Button **/
@@ -253,7 +259,8 @@ footer p {
   }
 
   nav ul li a:hover {
-    background-color: #46eeeeb3;
+    background-color: #e5533d;
+    color: #fff;
     border-radius: 3px;
   }
 
@@ -396,7 +403,7 @@ footer p {
   margin-top: 15px;
   width: 100%;
   padding: 10px;
-  background-color: #ff6347;
+  background-color: #0f0f0f;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -504,7 +511,7 @@ nav li.logo-item img {
 }
 
 .reservation-btn {
-  background-color: #f04;
+  background-color: rgb(12, 10, 10);
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -580,8 +587,9 @@ body {
 
 /* ===== Footer ===== */
 .site-footer {
-  background: #111;
-  color: #fff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background: #ffffff;
+  color: #0c0303;
   padding: 1.5rem 0;
   text-align: center;
   font-size: 0.9rem;
@@ -595,7 +603,11 @@ body {
 }
 
 .site-footer .footer-text p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+
 }
 
 /* Centralizar ícones */
@@ -608,11 +620,49 @@ body {
 }
 
 .site-footer .footer-social a {
-  color: #fff;
+  color: #000000;
   font-size: 1.6rem;
   transition: color 0.3s ease;
 }
 
 .site-footer .footer-social a:hover {
   color: #f04; /* ou outra cor de destaque que queiras */
+}
+
+/* ===== Reviews Section ===== */
+.reviews-section {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #fff; /* fundo branco */
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  color: #333;
+  font-family: Georgia, serif;
+}
+
+.reviews-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #444;
+}
+
+/* Colunas em telas grandes */
+@media (min-width: 768px) {
+  .reviews-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.reviews-section .review {
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.reviews-section .review p {
+  margin-bottom: 1rem;
 }

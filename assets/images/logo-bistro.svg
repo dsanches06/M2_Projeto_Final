@@ -1,0 +1,23 @@
+<svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ornamento rústico superior -->
+  <path d="M50,70 H550" stroke="#5a3e27" stroke-width="8" stroke-linecap="round"></path>
+  <path d="M60,65 H540" stroke="#5a3e27" stroke-width="4" stroke-linecap="round"></path>
+
+  <!-- Texto principal -->
+  <text x="300" y="120" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#3c2a1a" text-anchor="middle" letter-spacing="2">
+    BISTRO BAR
+  </text>
+
+  <!-- Ornamento rústico entre linhas de texto -->
+  <path d="M180,135 H420" stroke="#5a3e27" stroke-width="6" stroke-linecap="round"></path>
+
+  <!-- Texto secundário -->
+  <text x="300" y="175" font-family="Georgia, serif" font-size="28" fill="#4b2f1e" text-anchor="middle">
+    SANCHEZ PINTO
+  </text>
+
+  <!-- Detalhe / Estabelecido -->
+  <text x="300" y="210" font-family="Courier New, monospace" font-size="18" fill="#4b2f1e" text-anchor="middle">
+    EST. 2025
+  </text>
+</svg>
