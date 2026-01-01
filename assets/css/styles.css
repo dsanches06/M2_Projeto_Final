@@ -4,7 +4,7 @@
 :root {
   --width: 150px;
   --height: 150px;
-  --quantity: 10;
+  --quantity: 6;
   --duration: 60s;
 
   --primary-bg-color: #c93b3b;
@@ -62,20 +62,43 @@ b {
   font-weight: 400;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "League Spartan", Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   color: var(--title-color);
   font-weight: 200;
 }
 
-h1 { font-size: 2.5rem; font-weight: 200; }
-h2 { font-size: 2rem; text-align: center; letter-spacing: 0.4rem; }
-h3 { font-size: 1.55rem; text-align: left; }
-h4 { color: var(--primary-color); font-weight: 400; font-size: 1.15rem; text-align: left; }
+h1 {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.4rem;
+}
+h3 {
+  font-size: 1.55rem;
+  text-align: left;
+}
+h4 {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.15rem;
+  text-align: left;
+}
 
-p, span, li { font-size: 1rem; }
-p { text-align: justify; }
+p,
+span,
+li {
+  font-size: 1rem;
+}
+p {
+  text-align: justify;
+}
 
 /* =========================
    Header / Navbar
@@ -115,7 +138,7 @@ nav {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 
 nav.scrolled {
@@ -136,7 +159,9 @@ nav ul {
 }
 
 /* Submenus */
-.has-submenu:hover .submenu { display: block; }
+.has-submenu:hover .submenu {
+  display: block;
+}
 
 .submenu {
   display: none;
@@ -150,9 +175,13 @@ nav ul {
   list-style: none;
 }
 
-.submenu li a { padding: 0.5rem 1rem; }
+.submenu li a {
+  padding: 0.5rem 1rem;
+}
 
-nav li { position: relative; }
+nav li {
+  position: relative;
+}
 
 nav li.logo-item {
   display: flex;
@@ -160,7 +189,10 @@ nav li.logo-item {
   padding: 0 0.5rem;
 }
 
-nav li.logo-item img { display: block; height: 40px; }
+nav li.logo-item img {
+  display: block;
+  height: 40px;
+}
 
 /* =========================
    Botões
@@ -180,12 +212,23 @@ nav li.logo-item img { display: block; height: 40px; }
   color: var(--primary-color);
 }
 
-.btn:hover { transform: scale(1.05); transition: ease-in-out 0.3s; }
+.btn:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
 
-.btn span, .btn i { font-size: 1.25rem; text-transform: uppercase; }
+.btn span,
+.btn i {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
 
-.btn--primary span { color: var(--primary-color); }
-.btn--primary { border: 1px solid var(--primary-color); }
+.btn--primary span {
+  color: var(--primary-color);
+}
+.btn--primary {
+  border: 1px solid var(--primary-color);
+}
 
 .reservation-btn {
   background-color: rgb(12, 10, 10);
@@ -194,15 +237,12 @@ nav li.logo-item img { display: block; height: 40px; }
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: 0.3s ease;
 }
 
-.reservation-btn:hover { background-color: #d03; }
-
-/* =========================
-   Carousel
-   ========================= */
-.carousel { padding: 1rem; }
+.reservation-btn:hover {
+  background-color: #d03;
+}
 
 /* =========================
    Main / Overlay
@@ -214,7 +254,10 @@ main {
   gap: 2rem;
 }
 
-main > * { position: relative; z-index: 1; }
+main > * {
+  position: relative;
+  z-index: 1;
+}
 
 /* =========================
    Galeria
@@ -248,7 +291,7 @@ main > * { position: relative; z-index: 1; }
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -261,9 +304,20 @@ main > * { position: relative; z-index: 1; }
   position: relative;
 }
 
-.modal-content h2 { margin-bottom: 15px; }
-.modal-content label { display: block; margin-top: 10px; }
-.modal-content input { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+}
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 .modal-content button {
   margin-top: 15px;
   width: 100%;
@@ -275,32 +329,33 @@ main > * { position: relative; z-index: 1; }
   cursor: pointer;
 }
 
-.modal-content button:hover { background-color: #e5533d; }
+.modal-content button:hover {
+  background-color: #e5533d;
+}
 
-.close { position: absolute; top: 10px; right: 15px; font-size: 25px; font-weight: bold; cursor: pointer; }
-
-/* =========================
-   FOOTER GERAL
-========================= */
-.site-footer {
-  background-color: #111;
-  color: #fff;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* =========================
    FOOTER GERAL
 ========================= */
 .site-footer {
-  background-color: #111;
-  color: #fff;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background: #ffffff;
+  color: #0c0303;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 /* Container principal */
-.footer-content {
+.site-footer .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -308,33 +363,32 @@ main > * { position: relative; z-index: 1; }
   gap: 30px;
 }
 
-
 /* =========================
    TEXTO + REDES SOCIAIS
 ========================= */
-.footer-text {
+.site-footer .footer-text {
   text-align: center;
 }
 
-.footer-text p {
+.site-footer .footer-text p {
   margin: 5px 0;
   font-size: 14px;
   text-align: center;
 }
 
-.footer-social {
+.site-footer .footer-social {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-.footer-social a {
+.site-footer .footer-social a {
   color: #fff;
   font-size: 18px;
   transition: color 0.3s ease;
 }
 
-.footer-social a:hover {
+.site-footer .footer-social a:hover {
   color: #c59d5f;
 }
 /* =========================
@@ -457,10 +511,19 @@ main > * { position: relative; z-index: 1; }
   color: #444;
 }
 
-.reviews-section .review { font-size: 1rem; line-height: 1.8; text-align: justify; }
-.reviews-section .review p { margin-bottom: 1rem; }
+.reviews-section .review {
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+.reviews-section .review p {
+  margin-bottom: 1rem;
+}
 
-.reviews-images { display: flex; width: 100%; }
+.reviews-images {
+  display: flex;
+  width: 100%;
+}
 .reviews-images img {
   width: 50%;
   height: 420px;
@@ -469,7 +532,20 @@ main > * { position: relative; z-index: 1; }
   filter: grayscale(100%);
 }
 
-.reviews-content { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+.reviews-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* =========================
+   Carousel
+   ========================= */
+.carousel {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.75;
+}
 
 /* =========================
    Chefs Section
@@ -479,6 +555,8 @@ main > * { position: relative; z-index: 1; }
   margin: 0;
   width: 100vw;
   background-color: #f8f8f8;
+  position: sticky;
+  z-index: -2;
 }
 
 .chefs-container {
@@ -515,14 +593,35 @@ main > * { position: relative; z-index: 1; }
   gap: 40px;
 }
 
-.historia-text { flex: 1; }
-.historia-text h2 { font-size: 36px; margin-bottom: 20px; color: #333; }
-.historia-text p { font-size: 18px; line-height: 1.6; color: #555; }
+.historia-text {
+  flex: 1;
+}
+.historia-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.historia-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
 
-.historia-img { flex: 1; }
-.historia-img img { width: 100%; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+.historia-img {
+  flex: 1;
+}
+.historia-img img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
 
-.historia-section { padding-bottom: 0; margin-bottom: 0; }
+.historia-section {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 
 /* =========================
    Carta Section
@@ -532,47 +631,118 @@ main > * { position: relative; z-index: 1; }
   background-color: #fff;
 }
 
-.hidden { display: none; }
+.hidden {
+  display: none;
+}
 
 /* =========================
    Responsividade
    ========================= */
 @media (max-width: 768px) {
-  .gallery { grid-template-columns: repeat(2, 1fr); }
-  .gallery img { width: 100%; }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery img {
+    width: 100%;
+  }
 
-  .reviews-images { flex-direction: column; }
-  .reviews-images img { width: 100%; height: 260px; }
+  .reviews-images {
+    flex-direction: column;
+  }
+  .reviews-images img {
+    width: 100%;
+    height: 260px;
+  }
 
-  .historia-section .container { flex-direction: column; text-align: center; }
-  .historia-text, .historia-img { width: 100%; }
-  .historia-img img { margin-top: 20px; }
+  .historia-section .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .historia-text,
+  .historia-img {
+    width: 100%;
+  }
+  .historia-img img {
+    margin-top: 20px;
+  }
 
-  nav { flex-direction: column; align-items: center; }
-  .nav-left, .nav-right { flex-direction: column; width: 100%; align-items: center; }
-  .nav-right { margin-top: 0.5rem; }
-  .menu-toggle { display: block; }
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .nav-right {
+    margin-top: 0.5rem;
+  }
+  .menu-toggle {
+    display: block;
+  }
 }
 
-@media (max-width: 600px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 400px) { .gallery { grid-template-columns: 1fr; } }
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* =========================
    Responsividade Desktop
    ========================= */
 @media (min-width: 768px) {
-  :root { --width: 300px; --height: 300px; }
+  :root {
+    --width: 500px;
+    --height: 500px;
+  }
 
-  .header { background-color: #333; }
-  .header h1, span { font-size: 2em; color: #fff; }
-  .menu-toggle { display: none; }
+  .header {
+    background-color: #333;
+  }
+  .header h1,
+  span {
+    font-size: 2em;
+    color: #fff;
+  }
+  .menu-toggle {
+    display: none;
+  }
 
-  .carousel { padding: 8rem 6rem 4rem 6rem; }
+  .carousel {
+    padding: 8rem 6rem 4rem 6rem;
+  }
 
-  .reviews-section { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .reviews-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
 
-  nav ul { display: flex; flex-direction: row; justify-content: center; background-color: transparent; position: static; width: auto; padding: 0; }
-  nav ul li a { color: #333; display: block; padding: 10px; font-size: 20px; }
-  nav ul li a:hover { background-color: #e5533d; color: #fff; border-radius: 3px; }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    position: static;
+    width: auto;
+    padding: 0;
+  }
+  nav ul li a {
+    color: #333;
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+  }
+  nav ul li a:hover {
+    background-color: #e5533d;
+    color: #fff;
+    border-radius: 3px;
+  }
 }
-
