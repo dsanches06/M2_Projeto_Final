@@ -533,6 +533,10 @@ select {
   z-index: -2;
 }
 
+.chefs-section h2 {
+  display: none;
+}
+
 .chefs-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
