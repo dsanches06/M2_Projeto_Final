@@ -108,6 +108,10 @@ ul {
    Header / Navbar
    ========================= */
 
+header h1 {
+  display: none;
+}
+
 /* Navbar base */
 nav {
   display: flex;
@@ -258,10 +262,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-main h1 {
-  display: none;
 }
 
 /* =========================
