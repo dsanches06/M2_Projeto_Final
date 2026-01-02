@@ -31,17 +31,29 @@
 
         <!-- Menu principal à esquerda -->
         <ul class="nav-left" role="menubar">
-          <li role="menuitem"><a href="#" role="link">Home</a></li>
+          <li role="menuitem"><a href="#" aria-label="menu home">Home</a></li>
 
           <!-- Dropdown "A Carta" -->
           <li role="menuitem" class="has-submenu">
-            <a href="#">A Carta <i class="fa-solid fa-caret-down"></i></a>
+            <a href="#" aria-label="menu a carta"
+              >A Carta <i class="fa-solid fa-caret-down" aria-hidden="true"></i
+            ></a>
             <ul class="submenu">
               <li role="menuitem">
-                <a class="menu-link" href="#menudegustação">Menu Degustação</a>
+                <a
+                  class="menu-link"
+                  href="#menudegustação"
+                  aria-label="menu degustação"
+                  >Menu Degustação</a
+                >
               </li>
               <li role="menuitem">
-                <a class="menu-link" href="#vinhos">Carta de Vinhos</a>
+                <a
+                  class="menu-link"
+                  href="#vinhos"
+                  aria-label="menu carta de vinho"
+                  >Carta de Vinhos</a
+                >
               </li>
             </ul>
           </li>
@@ -450,10 +462,16 @@
               />
             </li>
             <li class="item" style="--position: 5">
-              <img src="images/05.webp" />
+              <img
+                src="images/05.webp"
+                alt="Sobremesa de chocolate com frutos vermelhos"
+              />
             </li>
             <li class="item" style="--position: 6">
-              <img src="images/06.webp" />
+              <img
+                src="images/06.webp"
+                alt="Tacos mexicanos servidos com guacamole e salsa"
+              />
             </li>
           </ul>
         </div>
