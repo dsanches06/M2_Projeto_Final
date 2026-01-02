@@ -7,7 +7,7 @@
   --primary-border-color: #24c739;
   --secondary-border-color: #5555b8;
 
-  --title-color: #e3e3e9;
+  --title-color: #222222;
   --text-color: #0e0e0f;
   --link-color: #dfe0e9;
   --icon-color: #141518;
@@ -414,10 +414,11 @@ select {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 0 20px;
 }
 
 .site-footer .footer-social {
-  margin: 30px 0 30px 0;
+  margin: 30px 0 0 0;
   text-align: center;
 }
 
@@ -428,7 +429,8 @@ select {
 .fa-instagram {
   color: #83410c;
 }
-.site-footer .footer-social h1 {
+.site-footer .footer-social h1,
+.site-footer .footer-social h2 {
   color: #333;
   padding: 20px;
 }
@@ -438,7 +440,7 @@ select {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 .site-footer .footer-location .address h3 {
@@ -617,9 +619,6 @@ select {
   .carousel {
     padding: 8rem;
   }
-
-
-
 }
 
 /* =========================
@@ -690,16 +689,8 @@ select {
   }
 
   .site-footer .footer-location {
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-   padding: 0 20px;
-}
-
-
-
-.site-footer .footer-text{
-  padding: 0 20px;
-}
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
 }

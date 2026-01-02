@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <!-- Codificação UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Responsividade em dispositivos móveis -->
+    <meta name="description" content="Projeto de Modulo 2" />
     <title>Projeto M2</title>
     <!-- Título da página -->
     <link rel="stylesheet" href="css/styles.css" />
     <!-- CSS principal -->
     <link rel="stylesheet" href="css/carousel.css" />
     <!-- CSS específico do carousel -->
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
     <script
       src="https://kit.fontawesome.com/874e9efdc5.js"
       crossorigin="anonymous"
@@ -21,25 +22,27 @@
 
   <body>
     <!-- HEADER e NAV -->
-    <header>
-      <nav>
+    <header role="banner">
+      <nav role="navigation">
         <!-- Botão para abrir menu mobile -->
         <button class="menu-toggle" aria-label="Abrir Menu">
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
 
         <!-- Menu principal à esquerda -->
-        <ul class="nav-left">
-          <li><a href="#">Home</a></li>
+        <ul class="nav-left" role="menubar">
+          <li role="menuitem"><a href="#" role="link">Home</a></li>
 
           <!-- Dropdown "A Carta" -->
-          <li class="has-submenu">
+          <li role="menuitem" class="has-submenu">
             <a href="#">A Carta <i class="fa-solid fa-caret-down"></i></a>
             <ul class="submenu">
-              <li>
+              <li role="menuitem">
                 <a class="menu-link" href="#menudegustação">Menu Degustação</a>
               </li>
-              <li><a class="menu-link" href="#vinhos">Carta de Vinhos</a></li>
+              <li role="menuitem">
+                <a class="menu-link" href="#vinhos">Carta de Vinhos</a>
+              </li>
             </ul>
           </li>
 
@@ -424,39 +427,33 @@
           <ul class="list">
             <li class="item" style="--position: 1">
               <img
-                src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
+                src="images/01.webp"
                 alt="Salada fresca com vegetais coloridos"
               />
             </li>
             <li class="item" style="--position: 2">
               <img
-                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
+                src="images/02.webp"
                 alt="Prato de massa com molho de tomate e manjericão"
               />
             </li>
             <li class="item" style="--position: 3">
               <img
-                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
+                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?crop=entropy&cs=tinysrgb&fit=crop&h=398&w=398"
                 alt="Hambúrguer suculento com batatas fritas"
               />
             </li>
             <li class="item" style="--position: 4">
               <img
-                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
+                src="images/04.webp"
                 alt="Prato gourmet com peixe e legumes"
               />
             </li>
             <li class="item" style="--position: 5">
-              <img
-                src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
-                alt="Sobremesa de chocolate com frutas vermelhas"
-              />
+              <img src="images/05.webp" />
             </li>
             <li class="item" style="--position: 6">
-              <img
-                src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=500"
-                alt="Tacos mexicanos servidos com guacamole e salsa"
-              />
+              <img src="images/06.webp" />
             </li>
           </ul>
         </div>
@@ -593,13 +590,13 @@
           <!-- Imagem 1 -->
 
           <img
-            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
+            src="images/01.webp"
             alt="Salada fresca com vegetais coloridos"
           />
 
           <!-- Imagem 2 -->
           <img
-            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
+            src="images/02.webp"
             alt="Prato de massa com molho de tomate e manjericão"
           />
 
@@ -610,20 +607,17 @@
           />
 
           <!-- Imagem 4 -->
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
-            alt="Prato gourmet com peixe e legumes"
-          />
+          <img src="images/04.webp" alt="Prato gourmet com peixe e legumes" />
 
           <!-- Imagem 5 -->
           <img
-            src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?crop=entropy&cs=tinysrgb&fit=crop&h=500&w=500"
+            src="images/05.webp"
             alt="Sobremesa de chocolate com frutas vermelhas"
           />
 
           <!-- Imagem 6 -->
           <img
-            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=500"
+            src="images/06.webp"
             alt="Tacos mexicanos servidos com guacamole e salsa"
           />
         </div>
@@ -632,26 +626,32 @@
     <!-- footer -->
     <footer class="site-footer">
       <div class="footer-social">
-        <h1>Contactos</h1>
+        <h2>Contactos</h2>
         <a
           href="https://www.facebook.com"
           target="_blank"
           aria-label="Facebook"
         >
-          <i class="fa-brands fa-facebook-f fa-bounce fa-2xl"></i>
+          <i
+            class="fa-brands fa-facebook-f fa-bounce fa-2xl"
+            aria-hidden="true"
+          ></i>
         </a>
         <a
           href="https://www.instagram.com"
           target="_blank"
           aria-label="Instagram"
         >
-          <i class="fa-brands fa-instagram fa-shake fa-2xl"></i>
+          <i
+            class="fa-brands fa-instagram fa-shake fa-2xl"
+            aria-hidden="true"
+          ></i>
         </a>
       </div>
       <!-- LOCALIZAÇÃO -->
       <div class="footer-location">
         <!-- Morada -->
-        <div class="address">
+        <div class="address" role="region" aria-label="Morada do restaurante">
           <h3>Localização</h3>
           <p>Faculdade de Ciências da Universidade de Lisboa</p>
           <p>Edifício 8</p>
@@ -660,8 +660,13 @@
         </div>
 
         <!-- Google Maps embed -->
-        <div class="map">
+        <div
+          class="map"
+          role="region"
+          aria-label="Mapa para localização do restaurante"
+        >
           <iframe
+            title="Nossa Localização"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9836.186970729765!2d-9.157109!3d38.757246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932e33660fb07%3A0x27596e642a1e3e84!2sEdificio%20C8%20-%20Faculdade%20de%20Ci%C3%AAncias%20da%20Universidade%20de%20Lisboa!5e1!3m2!1spt-PT!2sus!4v1767372657511!5m2!1spt-PT!2sus"
             style="border: 0"
             allowfullscreen=""
@@ -671,7 +676,7 @@
         </div>
       </div>
 
-      <div class="footer-text">
+      <div class="footer-text" aria-label="Informações de direitos autorais">
         <p>Bistrô Bar UPSKILL by Danilson Sanches & Abel Pinto</p>
         <p>© 2025 Todos os direitos reservados</p>
       </div>
