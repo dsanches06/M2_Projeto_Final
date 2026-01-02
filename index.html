@@ -22,8 +22,8 @@
 
   <body>
     <!-- HEADER e NAV -->
-    <header role="banner">
-      <nav role="navigation">
+    <header aria-label="Cabeçalho">
+      <nav aria-label="Navegação principal">
         <!-- Botão para abrir menu mobile -->
         <button class="menu-toggle" aria-label="Abrir Menu">
           <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -31,7 +31,9 @@
 
         <!-- Menu principal à esquerda -->
         <ul class="nav-left" role="menubar">
-          <li role="menuitem"><a href="#">Home</a></li>
+          <li role="menuitem">
+            <a href="#">Home</a>
+          </li>
 
           <!-- Dropdown "A Carta" -->
           <li role="menuitem" class="has-submenu">
@@ -344,7 +346,7 @@
     </section>
 
     <!-- SECÇÃO CHEFS -->
-    <main role="main">
+    <main>
       <h1>Bistrô Bar Sanches & Pinto</h1>
 
       <section id="reservationModal" class="modal">
