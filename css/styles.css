@@ -260,6 +260,10 @@ main {
   gap: 2rem;
 }
 
+main h1 {
+  display: none;
+}
+
 /* =========================
    Galeria
    ========================= */
@@ -467,6 +471,9 @@ select {
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 1rem;
 }
+.reviews-section h2 {
+  display: none;
+}
 
 .reviews-section .reviews-chefe {
   display: grid;
@@ -511,6 +518,9 @@ select {
   z-index: 1;
 }
 
+.carousel h2 {
+  display: none;
+}
 /* =========================
    Chefs Section
    ========================= */
@@ -692,5 +702,5 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
+  }
 }
